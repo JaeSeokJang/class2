@@ -1,0 +1,232 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  position: relative;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 15%;
+  background: #f1f1f1;
+  float: right;
+  position: absolute;
+  right: 80px;
+  top: 5px;
+}
+
+/* Style the submit button */
+form.example button {
+  position: absolute;
+  float: right;
+  width: 5%;
+  padding: 10px;
+  background:black;
+  color: white;
+  font-size: 17px;
+  border: 1px solid black;
+  /* Prevent double borders */
+  cursor: pointer;
+  height: 47px;
+  position: absolute;
+  right: 16px;
+  top: 5px;
+}
+
+form.example button:hover {
+  position: absolute;
+  background: white;
+  color: black;
+
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.card-body {
+    text-indent: 30px;
+}
+    input[id="menuicon"]:checked ~ .container .sidebar {
+        left:0;
+    
+    }
+    input[id="menuicon"]:checked + label {
+        z-index:2000;
+        margin-left: 200px;
+        position: fixed;
+        top: 10px;
+    }
+    input[id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
+    input[id="menuicon"]:checked + label span:nth-child(2) {opacity:0;}
+    input[id="menuicon"]:checked + label span:nth-child(3) {bottom: 50%; transform:translateY(50%) rotate(-45deg);}
+    input[id="menuicon"] + label {
+        display:block;
+        width: 60px;
+        height: 40px;
+        cursor: pointer;
+        position: absolute;
+        left:10px;
+        
+   
+        
+    }
+    input[id="menuicon"] + label span {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-radius: 30px;
+        background: #000;
+        transition: all .35s;
+    }
+    input[id="menuicon"] + label span:nth-child(1) {top: 0;}
+    input[id="menuicon"] + label span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    input[id="menuicon"] + label span:nth-child(3) {bottom: 0;}
+    .container {width:100%;position:relative;}  
+    .sidebar {position:fixed;top:0;left:-300px;width:300px;height:100%;background:white;border:1px solid white;z-index:10000;transition:.35s;}
+    .accordion {
+        background-color:white;
+        color:black;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: black;
+        outline: none;
+        transition: 0.4s;}
+      
+    
+    
+            
+            .accordion {
+              background-color: white;
+              color: black;
+              cursor: pointer;
+              padding: 18px;
+              width: 100%;
+              text-align: left;
+              border: none;
+              outline: none;
+              transition: 0.4s;
+            }
+            
+            /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+            .active, .accordion:hover {
+              background-color: #ccc;
+            }
+            
+            /* Style the accordion panel. Note: hidden by default */
+            .panel {
+              padding: 0 18px;
+              background-color: white;
+              display: none;
+              overflow: hidden;
+            }
+    </style>
+    
+        
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Bluesky Template-->
+<link rel="stylesheet" type="text/css" href="{% static 'bluesky/styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'bluesky/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'bluesky/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'bluesky/plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'bluesky/styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'bluesky/styles/responsive.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>WORDCOUNT</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="original-load"></div>
+        </div>
+    </div>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">    
+
+        <!-- Logo Area -->
+        <div class="logo-area text-center">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <a href="{% url 'home' %}" class="original-logo"><h1>wordcount</h1></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Load icon library -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        </div>
+    
+    </header>
+        <!-- Classy Menu -->
+                  
+
+
+    <!-- ##### Header Area End ##### -->
+
+    
+    {% block content %}
+
+    {% endblock %}
+
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+
+    <!-- Bluesky js-->
+    <script src="{% static 'bluesky/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'bluesky/styles/bootstrap4/popper.js' %}"></script>
+    <script src="{% static 'bluesky/styles/bootstrap4/bootstrap-custom.js' %}"></script>
+    <script src="{% static 'bluesky/plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+    <script src="{% static 'bluesky/plugins/easing/easing.js' %}"></script>
+    <script src="{% static 'bluesky/plugins/parallax-js-master/parallax.min.js' %}"></script>
+    <script src="{% static 'bluesky/js/custom.js' %}"></script>
+
+
+    </script>
+</body>
+
+</html>

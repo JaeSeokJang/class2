@@ -6,9 +6,15 @@ h1>당신이 입력한 텍스트는 <!--총단어수-->{{ total }} 개의 단어
 <!-- 입력받은 전체 텍스트 -->
 {{ fulltext }}
 
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content%}
 <h1>단어 카운트:</h1>
 <!-- '단어' - '단어나온 횟수' -->
 {% for word, count in dictionary %}
 {{ word }} : {{ count }}
 <br>
 {% endfor %}
+    
+{% endblock %}
